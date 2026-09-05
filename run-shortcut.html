@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Opening Shortcut…</title>
+  <script>
+    // Reads ?name=Your%20Shortcut%20Name from the URL and runs it.
+    // Example final link:
+    // https://yourusername.github.io/redirects/run-shortcut.html?name=Quick%20Add%20Event
+    var params = new URLSearchParams(window.location.search);
+    var shortcutName = params.get("name") || "Quick Add Event";
+    var target = "shortcuts://run-shortcut?name=" + encodeURIComponent(shortcutName);
+    window.location.href = target;
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("fallback").href = target;
+    });
+  </script>
+</head>
+<body style="font-family:-apple-system, sans-serif; text-align:center; padding-top:60px; color:#555;">
+  <p>Opening Shortcut…</p>
+  <p><a id="fallback" href="shortcuts://">Tap here if it doesn't open automatically</a></p>
+</body>
+</html>
