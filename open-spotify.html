@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Opening Spotify…</title>
+  <meta http-equiv="refresh" content="0; url=spotify://">
+  <script>
+    // Try the app first; if it's not installed, fall back to the web player after a short delay.
+    window.location.href = "spotify://";
+    setTimeout(function () {
+      window.location.href = "https://open.spotify.com/";
+    }, 1500);
+  </script>
+</head>
+<body style="font-family:-apple-system, sans-serif; text-align:center; padding-top:60px; color:#555;">
+  <p>Opening Spotify…</p>
+  <p><a href="spotify://">Tap here if it doesn't open automatically</a></p>
+</body>
+</html>
